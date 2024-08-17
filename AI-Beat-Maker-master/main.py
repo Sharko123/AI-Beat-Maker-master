@@ -91,10 +91,6 @@ def beat_maker(track_name, drums, bass, k):
 
 
 
-def main(track, drums, bass, k):
+def main(track, drums, bass, k, output_audio_path):
     final_res, samp_rate = beat_maker(track, drums, bass, k)
-    sf.write(f'C:/Users/death/Downloads/AI-Beat-Maker-master/AI-Beat-Maker-master/result/{track}.wav', final_res, samp_rate)
-
-
-if __name__ == "__main__":
-    main("twinkletwinkle", True, True, 8)
+    sf.write(f'/{output_audio_path}.wav', final_res, samp_rate)

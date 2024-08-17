@@ -3,7 +3,7 @@ import click
 import librosa
 import numpy as np
 import utils
-from drums_generator import predict
+from drums_generator.predict import generate
 from methods import beat_tracking
 from methods.bass_generator import generate_bass
 from methods.chord_recognition import rearrange_by_chord_recognition, chord_rec
@@ -63,7 +63,7 @@ def beat_maker(track_name, drums, bass, k):
 
     # drums generation into midi file and converting the midi to wav file
     if drums:
-        midi_drums = predict.generate(tempo=tempo)
+        midi_drums = generate(tempo=tempo)
         midi_drums.save('latest_drums.mid')
         convert_midi_to_wav('latest_drums.mid', 'latest_drums.wav')
 

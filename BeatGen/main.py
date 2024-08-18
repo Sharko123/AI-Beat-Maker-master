@@ -3,7 +3,7 @@ import click
 import librosa
 import numpy as np
 import utils
-from drums_generator.predict import generate
+from drums_generator import predict
 from methods import beat_tracking
 from methods.bass_generator import generate_bass
 from methods.chord_recognition import rearrange_by_chord_recognition, chord_rec
